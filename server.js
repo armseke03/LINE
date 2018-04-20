@@ -135,7 +135,7 @@ function setTHttpClient(xoptions = {
     path: config.LINE_HTTP_URL,
     https: true
   },callback,xcustom="none",tpath) {
-	xoptions.headers['X-Line-Application'] = 'DESKTOPWIN\t7.18.1\tFDLRCN\t11.2.5';
+	xoptions.headers['X-Line-Application'] = 'X_LINE_APP';
     connection =
       thrift.createHttpConnection(config.LINE_DOMAIN_3RD, 443, xoptions);
     connection.on('error', (err) => {
@@ -200,7 +200,7 @@ function qrLogin(xverifier,callback){
 			if(xret == "DONE"){
 			reqx.type = 1;
 			reqx.verifier = verifiedQr;
-			reqx.systemName = "WBCHT";
+			reqx.systemName = "Boyselfbot";
 			reqx.identityProvider = 1;
 			reqx.e2eeVersion = 0;
 			TauthService.loginZ(reqx,(err,success) => {
